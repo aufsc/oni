@@ -164,6 +164,7 @@ body {
 }
 .tag-cloud {
     display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start;
+    justify-content: center;         /* 每一行标签水平居中 */
     flex: 1 1 0;
     min-height: 0;
     overflow: hidden;                /* 放不下的由 JS 分到下一页 */
@@ -340,17 +341,24 @@ body {
 
 /* === 响应式 === */
 @media (max-width: 900px) {
-    .main-container { flex-direction: column; margin-bottom: 20px; }
-    .post-section { width: 100%; margin-right: 0; }
-    .post-grid { grid-template-columns: 1fr; min-height: 0; }
-    .post-item { height: auto; }
+    /* 移动端顺序：文章 → 文章翻页 → 网站统计 → 联系方式 → 词云
+       main-container 不再生成盒子，让文章区 / 侧边栏直接成为 page-wrapper 的弹性子项后用 order 排序 */
+    .page-wrapper { display: flex; flex-direction: column; }
+    .main-container { display: contents; }
+    .post-section { order: 1; width: 100%; margin-right: 0; }
+    .pagination { order: 2; margin-top: 24px; }
     .sidebar-section {
-        position: static; width: 100%; margin-top: 20px;
+        order: 3;
+        position: static; width: 100%; margin-top: 28px;
         display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
     }
+    .post-grid { grid-template-columns: 1fr; min-height: 0; }
+    .post-item { height: auto; }
     .widget { margin-bottom: 0; }
-    .cloud-widget { flex: none; }
-    .tag-cloud { overflow: visible; }
+
+    /* 词云：不再限高，标签完整显示在卡片内，分页器在标签下方 */
+    .cloud-widget { flex: none; grid-column: 1 / -1; }
+    .tag-cloud { flex: none; min-height: 0; overflow: visible; margin-bottom: 15px; }
     .page-btn { width: 40px; height: 40px; }
 }
 @media (max-width: 600px) {
@@ -568,6 +576,10 @@ body {
    v2 新增：页面间距 / 无障碍 / 图片预览 / 代码高亮 / 减少动画
    ===================================================================== */
 [hidden] { display: none !important; }
+
+/* 文章目录缩进（h1/h2 不缩进） */
+.toc li.toc-lv3 { padding-left: 12px; } .toc li.toc-lv4 { padding-left: 24px; }
+.toc li.toc-lv5 { padding-left: 36px; } .toc li.toc-lv6 { padding-left: 48px; }
 
 /* 原来写在各页面 <body style="..."> 里的内边距 */
 body.with-nav { padding-top: 80px; padding-bottom: 60px; }
