@@ -175,9 +175,11 @@
                     </li>
                     
                 </ul>
+                <!-- ✅ 分页器移入左侧内部 -->
+                <div class="pagination" id="pagination"></div>
             </div>
 
-            <!-- 右侧侧边栏（绝对定位，高度跟随文章区） -->
+            <!-- 右侧侧边栏 -->
             <aside class="sidebar-section">
                 <div class="widget">
                     <h3 class="widget-title">网站统计</h3>
@@ -201,7 +203,6 @@
                     </div>
                 </div>
 
-                <!-- 词云卡片：占满剩余高度，内部分页 -->
                 <div class="widget cloud-widget">
                     <h3 class="widget-title">热门词云</h3>
                     <div class="tag-cloud" id="tagCloud"></div>
@@ -209,8 +210,6 @@
                 </div>
             </aside>
         </div>
-
-        <div class="pagination" id="pagination"></div>
     </div>
 
 
@@ -226,7 +225,7 @@
     <script src="/static/main.js" defer></script>
 
     <script src="/static/index.js" defer></script>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script defer src="https://events.vercount.one/js"></script>
 
 </body>
 </html>

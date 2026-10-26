@@ -344,13 +344,27 @@ body {
     .post-section { width: 100%; margin-right: 0; }
     .post-grid { grid-template-columns: 1fr; min-height: 0; }
     .post-item { height: auto; }
+    
+    /* 分页器上下间距 */
+    .pagination { margin-top: 30px; margin-bottom: 40px; }
+
+    /* 侧边栏改为垂直流式排列 */
     .sidebar-section {
-        position: static; width: 100%; margin-top: 20px;
-        display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+        position: static; 
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
     .widget { margin-bottom: 0; }
-    .cloud-widget { flex: none; }
-    .tag-cloud { overflow: visible; }
+    
+    /* ✅ 给移动端的词云固定高度，防止内容撑破导致重叠 */
+    .cloud-widget { 
+        flex: none; 
+        height: 350px; 
+        min-height: 350px;
+    }
+    .tag-cloud { overflow: hidden; }
     .page-btn { width: 40px; height: 40px; }
 }
 @media (max-width: 600px) {
