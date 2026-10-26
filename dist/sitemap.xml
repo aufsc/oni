@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://xxxx.org/</loc></url>
+  <url><loc>https://xxxx.org/categories.html</loc></url>
+  <url><loc>https://xxxx.org/about.html</loc></url>
+  <url><loc>https://xxxx.org/contact.html</loc></url>
+  <url><loc>https://xxxx.org/post/1.html</loc><lastmod>2024-11-08</lastmod></url>
+  <url><loc>https://xxxx.org/post/2.html</loc><lastmod>2024-10-21</lastmod></url>
+  <url><loc>https://xxxx.org/post/3.html</loc><lastmod>2024-09-15</lastmod></url>
+  <url><loc>https://xxxx.org/post/4.html</loc><lastmod>2024-08-03</lastmod></url>
+  <url><loc>https://xxxx.org/post/5.html</loc><lastmod>2024-07-12</lastmod></url>
+  <url><loc>https://xxxx.org/post/6.html</loc><lastmod>2024-05-18</lastmod></url>
+  <url><loc>https://xxxx.org/post/7.html</loc><lastmod>2024-04-05</lastmod></url>
+  <url><loc>https://xxxx.org/post/8.html</loc><lastmod>2024-03-22</lastmod></url>
+  <url><loc>https://xxxx.org/post/9.html</loc><lastmod>2024-02-14</lastmod></url>
+</urlset>

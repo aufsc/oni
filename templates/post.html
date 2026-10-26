@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} - {{ SITE.name }}{% endblock %}
+{% block description %}{{ excerpt }}{% endblock %}
+{% block meta %}
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="{{ SITE.name }}">
+    <meta property="og:title" content="{{ article_title }}">
+    <meta property="og:description" content="{{ excerpt }}">
+    {% if cover %}<meta property="og:image" content="{{ cover }}">{% endif %}
+    {% if SITE.url %}<link rel="canonical" href="{{ SITE.url }}{{ url }}">{% endif %}
+{% endblock %}
+{% block body_class %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block body %}
+    <div class="post-layout">
+        <aside class="sidebar collapsed" id="sidebar"><h2>目录</h2>
+            <nav class="toc" id="toc" aria-label="文章目录"><ul>{% for h in toc %}<li class="toc-lv{{ h.level }}"><a href="#{{ h.id }}">{{ h.text }}</a></li>{% endfor %}</ul></nav>
+        </aside>
+        <main class="content-wrapper" id="content-scroll">
+            <div class="controls">
+                <a href="/" class="back-btn" aria-label="返回首页">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </a>
+                <button id="mobile-toc-toggle" class="mobile-toc-toggle collapsed" aria-label="切换大纲" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+                <button class="theme-toggle" aria-label="切换主题">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+            <article class="markdown-body" id="markdown-content">
+                <h1>{{ article_title }}</h1>
+                <div class="post-header-meta">
+                    <span class="post-header-category">{{ category }}</span>
+                    <span class="post-header-date">{{ modified_time }}</span>
+                </div>
+                {{ content|safe }}
+                {% if SITE.giscus.repo %}
+                <div class="giscus-container">
+                    <div class="giscus" data-repo="{{ SITE.giscus.repo }}" data-repo-id="{{ SITE.giscus.repo_id }}" data-category="{{ SITE.giscus.category }}" data-category-id="{{ SITE.giscus.category_id }}"></div>
+                </div>
+                {% endif %}
+            </article>
+        </main>
+    </div>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="图片预览" hidden>
+        <button type="button" id="lb-close" class="lb-btn lb-close" aria-label="关闭">&times;</button>
+        <button type="button" id="lb-prev" class="lb-btn lb-prev" aria-label="上一张">&#10094;</button>
+        <button type="button" id="lb-next" class="lb-btn lb-next" aria-label="下一张">&#10095;</button>
+        <div id="lb-stage" class="lb-stage"><img id="lb-img" class="lb-img" alt=""></div>
+    </div>
+{% endblock %}
+{% block footer %}{% endblock %}
+{% block scripts %}
+    <script src="/static/post.js" defer></script>
+{% endblock %}

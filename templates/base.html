@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ SITE.name }}{% endblock %}</title>
+    <meta name="description" content="{% block description %}{{ SITE.description }}{% endblock %}">
+    {% block meta %}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ SITE.name }}">
+    <meta property="og:title" content="{{ self.title() }}">
+    <meta property="og:description" content="{{ SITE.description }}">
+    {% endblock %}
+    {% if SITE.url %}<link rel="alternate" type="application/rss+xml" title="{{ SITE.name }}" href="/rss.xml">{% endif %}
+    <!-- 先于 CSS 应用主题，避免闪烁；无本地设置时跟随系统 -->
+    <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+</head>
+<body class="{% block body_class %}with-nav{% endblock %}">
+{% block navbar %}
+{% set nav = [('index','/','首页'),('categories','/categories.html','分类'),('about','/about.html','关于'),('contact','/contact.html','联系')] %}
+    <nav class="navbar">
+        <div class="nav-left"><a href="/" aria-label="首页"><img src="{{ SITE.logo }}" alt="Logo" class="logo-img"></a></div>
+        <div class="nav-right">
+            {% block nav_extra %}{% endblock %}
+            {% for key, href, label in nav %}<a href="{{ href }}" class="nav-btn{% if page == key %} active{% endif %}"{% if page == key %} aria-current="page"{% endif %}>{{ label }}</a>
+            {% endfor %}
+            <button class="theme-toggle" aria-label="切换主题">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="hamburger" id="hamburger-btn" aria-label="菜单" aria-expanded="false" aria-controls="mobile-menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">{% for key, href, label in nav %}{% if key != 'index' %}<a href="{{ href }}">{{ label }}</a>{% endif %}{% endfor %}</div>
+    </nav>
+{% endblock %}
+{% block body %}{% endblock %}
+{% block footer %}
+    <footer class="footer">&copy; <span data-year></span> {{ SITE.domain }}. All rights reserved.</footer>
+{% endblock %}
+    <script src="/static/main.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

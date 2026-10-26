@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章分类 - blog</title>
+    <meta name="description" content="blog">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="blog">
+    <meta property="og:title" content="文章分类 - blog">
+    <meta property="og:description" content="blog">
+    
+    <link rel="alternate" type="application/rss+xml" title="blog" href="/rss.xml">
+    <!-- 先于 CSS 应用主题，避免闪烁；无本地设置时跟随系统 -->
+    <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+</head>
+<body class="with-nav">
+
+
+    <nav class="navbar">
+        <div class="nav-left"><a href="/" aria-label="首页"><img src="https://xxxx.org/logo" alt="Logo" class="logo-img"></a></div>
+        <div class="nav-right">
+            
+            <a href="/" class="nav-btn">首页</a>
+            <a href="/categories.html" class="nav-btn active" aria-current="page">分类</a>
+            <a href="/about.html" class="nav-btn">关于</a>
+            <a href="/contact.html" class="nav-btn">联系</a>
+            
+            <button class="theme-toggle" aria-label="切换主题">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="hamburger" id="hamburger-btn" aria-label="菜单" aria-expanded="false" aria-controls="mobile-menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu"><a href="/categories.html">分类</a><a href="/about.html">关于</a><a href="/contact.html">联系</a></div>
+    </nav>
+
+
+    
+    <div class="page-header"><h1>文章分类</h1><p>按主题浏览所有文章</p></div>
+    <div class="container" id="categoriesContainer">
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></span>
+                <span class="category-name">摄影</span>
+                <span class="category-count">2 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="2">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/1.html">城市夜行：在霓虹与寂静之间</a><span class="article-arrow">→</span></li>
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/5.html">胶片日常：慢下来的三十六张</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                <span class="category-name">阅读</span>
+                <span class="category-count">1 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="1">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/2.html">慢读一年：把书读薄，也把日子读厚</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg></span>
+                <span class="category-name">生活</span>
+                <span class="category-count">2 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="2">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/3.html">在家烘豆：从生豆到一杯咖啡的距离</a><span class="article-arrow">→</span></li>
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/8.html">厨房实验室：完美牛排的火候秘诀</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h10M4 18h6"/></svg></span>
+                <span class="category-name">运动</span>
+                <span class="category-count">1 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="1">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/4.html">山脊线上的一天：徒步者的时间刻度</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                <span class="category-name">旅行</span>
+                <span class="category-count">1 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="1">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/6.html">独自旅行：在异乡寻找内心的宁静</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></span>
+                <span class="category-name">技术</span>
+                <span class="category-count">1 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="1">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/7.html">代码之美：从 Web 开发到极简主义</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+        <div class="category-block">
+            <button type="button" class="category-header" aria-expanded="true">
+                <span class="category-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+                <span class="category-name">音乐</span>
+                <span class="category-count">1 篇</span>
+                <svg class="toggle-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <ul class="article-list" data-count="1">
+                <li class="article-item"><span class="article-bullet"></span><a href="/post/9.html">耳机里的宇宙：关于独立音乐的随想</a><span class="article-arrow">→</span></li>
+                
+            </ul>
+        </div>
+        
+    </div>
+
+
+    <footer class="footer">&copy; <span data-year></span> xxxx.org. All rights reserved.</footer>
+
+    <script src="/static/main.js" defer></script>
+
+</body>
+</html>

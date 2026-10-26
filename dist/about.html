@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于本站 - blog</title>
+    <meta name="description" content="blog">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="blog">
+    <meta property="og:title" content="关于本站 - blog">
+    <meta property="og:description" content="blog">
+    
+    <link rel="alternate" type="application/rss+xml" title="blog" href="/rss.xml">
+    <!-- 先于 CSS 应用主题，避免闪烁；无本地设置时跟随系统 -->
+    <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+</head>
+<body class="with-nav">
+
+
+    <nav class="navbar">
+        <div class="nav-left"><a href="/" aria-label="首页"><img src="https://xxxx.org/logo" alt="Logo" class="logo-img"></a></div>
+        <div class="nav-right">
+            
+            <a href="/" class="nav-btn">首页</a>
+            <a href="/categories.html" class="nav-btn">分类</a>
+            <a href="/about.html" class="nav-btn active" aria-current="page">关于</a>
+            <a href="/contact.html" class="nav-btn">联系</a>
+            
+            <button class="theme-toggle" aria-label="切换主题">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="hamburger" id="hamburger-btn" aria-label="菜单" aria-expanded="false" aria-controls="mobile-menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu"><a href="/categories.html">分类</a><a href="/about.html">关于</a><a href="/contact.html">联系</a></div>
+    </nav>
+
+
+    <div class="hero">
+        <img src="https://xxxx.org/logo" alt="头像" class="hero-avatar" width="112" height="112">
+        <h1>blog</h1>
+        <p class="hero-tagline">瞎折腾</p>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="section-title"><div class="section-title-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div> 关于本站</div>
+            <p>本站是一个基于 Python 构建的轻量级静态博客系统，使用 Markdown 编写文章，支持明暗主题切换、文章目录导航与全文搜索。</p>
+        </div>
+        <div class="section">
+            <div class="section-title"><div class="section-title-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div> 技术栈</div>
+            <div class="tech-grid">
+                <span class="tech-badge"><span class="tech-badge-dot" style="background:#3b82f6"></span>Python / Jinja2</span>
+                <span class="tech-badge"><span class="tech-badge-dot" style="background:#f59e0b"></span>Mistune Markdown</span>
+                <span class="tech-badge"><span class="tech-badge-dot" style="background:#10b981"></span>Vanilla JS</span>
+                <span class="tech-badge"><span class="tech-badge-dot" style="background:#8b5cf6"></span>CSS Variables</span>
+                <span class="tech-badge"><span class="tech-badge-dot" style="background:#ec4899"></span>Glassmorphism UI</span>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title"><div class="section-title-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div> 更新历史</div>
+            <div class="timeline">
+                <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-date">2025年</div><div class="timeline-title">博客正式上线</div><div class="timeline-desc">完成基本功能开发，支持 Markdown 渲染、目录导航与主题切换。</div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">&copy; <span data-year></span> xxxx.org. All rights reserved.</footer>
+
+    <script src="/static/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - blog</title>
+    <meta name="description" content="blog">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="blog">
+    <meta property="og:title" content="联系我们 - blog">
+    <meta property="og:description" content="blog">
+    
+    <link rel="alternate" type="application/rss+xml" title="blog" href="/rss.xml">
+    <!-- 先于 CSS 应用主题，避免闪烁；无本地设置时跟随系统 -->
+    <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/pygments.css">
+</head>
+<body class="with-nav">
+
+
+    <nav class="navbar">
+        <div class="nav-left"><a href="/" aria-label="首页"><img src="https://xxxx.org/logo" alt="Logo" class="logo-img"></a></div>
+        <div class="nav-right">
+            
+            <a href="/" class="nav-btn">首页</a>
+            <a href="/categories.html" class="nav-btn">分类</a>
+            <a href="/about.html" class="nav-btn">关于</a>
+            <a href="/contact.html" class="nav-btn active" aria-current="page">联系</a>
+            
+            <button class="theme-toggle" aria-label="切换主题">
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <button class="hamburger" id="hamburger-btn" aria-label="菜单" aria-expanded="false" aria-controls="mobile-menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu"><a href="/categories.html">分类</a><a href="/about.html">关于</a><a href="/contact.html">联系</a></div>
+    </nav>
+
+
+    <div class="page-header"><h1>联系我们</h1><p>有任何问题或合作意向，欢迎随时联系</p></div>
+    <div class="container">
+        <div class="contact-grid">
+            <a href="mailto:contact@example.com" class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><polyline points="2,4 12,13 22,4"/></svg></div><div class="contact-card-title">电子邮件</div><div class="contact-card-value">contact@example.com</div></a>
+            <a href="mailto:editor@example.com" class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><div class="contact-card-title">投稿邮箱</div><div class="contact-card-value">editor@example.com</div></a>
+            <a href="mailto:support@example.com" class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><div class="contact-card-title">技术支持</div><div class="contact-card-value">support@example.com</div></a>
+            <a href="mailto:collab@example.com" class="contact-card"><div class="contact-card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="contact-card-title">商务合作</div><div class="contact-card-value">collab@example.com</div></a>
+        </div>
+        <div class="form-section">
+            <h2>发送留言</h2>
+            <div class="form-group"><label for="msgName">您的姓名</label><input type="text" placeholder="请输入您的姓名" id="msgName" autocomplete="name"></div>
+            <div class="form-group"><label for="msgEmail">电子邮箱</label><input type="email" placeholder="your@email.com" id="msgEmail" autocomplete="email"></div>
+            <div class="form-group"><label for="msgSubject">主题</label><input type="text" placeholder="请简要描述您的问题或来意" id="msgSubject"></div>
+            <div class="form-group"><label for="msgBody">留言内容</label><textarea placeholder="请在此详细描述..." id="msgBody"></textarea></div>
+            <button type="button" class="submit-btn" id="sendMailBtn">通过邮件发送</button>
+            <p class="form-note">点击按钮将打开您的邮件客户端</p>
+        </div>
+    </div>
+
+
+    <footer class="footer">&copy; <span data-year></span> xxxx.org. All rights reserved.</footer>
+
+    <script src="/static/main.js" defer></script>
+
+    <script>
+        document.getElementById('sendMailBtn').addEventListener('click', () => {
+            const v = id => document.getElementById(id).value.trim();
+            const subject = v('msgSubject') || '来自博客的留言';
+            const body = `姓名：${v('msgName')}\n邮箱：${v('msgEmail')}\n\n${v('msgBody')}`;
+            window.location.href = `mailto:contact@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+    </script>
+
+</body>
+</html>
